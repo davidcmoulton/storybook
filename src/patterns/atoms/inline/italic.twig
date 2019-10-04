@@ -1,9 +1,0 @@
-{%- import '../../html.twig' as html -%}
-
-{%- set attributes = attributes|default({})|merge({class: attributes.class|default([])|merge(['italic']) }) -%}
-
-<i {{- html.attributes(attributes) }}>
-
-    {{- html.content(text) -}}
-
-</i>
