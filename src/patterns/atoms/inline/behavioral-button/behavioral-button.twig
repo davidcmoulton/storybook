@@ -1,0 +1,9 @@
+{%- import '../../../html.twig' as html -%}
+
+{% spaceless %}
+
+  <button data-behavior="logToConsole" {{- html.attributes(attributes|default({})) }}>
+    {{- html.content(text) -}}
+  </button>
+
+{% endspaceless %}
