@@ -26,10 +26,17 @@ function initializeComponent($component, availableModules) {
 }
 
 function initialize(window) {
+  debugger;
   const modules = defineAvailableModules();
   const patternsWithBehavior = [...window.document.querySelectorAll('[data-behavior]')];
   patternsWithBehavior.forEach((rootElement) => initializeComponent(rootElement, modules));
   flagJsUsage(window);
 }
 
-export default initialize(global.window);
+function delayLoad(delayed, window) {
+  debugger;
+  window.setTimeout(() => delayed.call(null, window), 3000);
+}
+
+// export default initialize(global.window);
+export default delayLoad(initialize, global.window);
