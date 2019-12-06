@@ -5,7 +5,7 @@ export default (mode) => ({
   entry: './src/patterns/main.js',
 
   output: {
-    path: path.resolve(__dirname, 'src/builtJs'),
+    path: path.resolve(__dirname, 'build'),
     filename: '[name].libero-bundle.js',
   },
 
