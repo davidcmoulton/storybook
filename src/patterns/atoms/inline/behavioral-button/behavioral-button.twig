@@ -1,8 +1,11 @@
 {%- import '../../../html.twig' as html -%}
 
+<script src="main.libero-bundle.js"></script>
+<img src="counters.jpg">
+
 {% spaceless %}
 
-  <button data-behavior="logToConsole" {{- html.attributes(attributes|default({})) }}>
+  <button data-behavior="behavioral-button" {{- html.attributes(attributes|default({})) }}>
     {{- html.content(text) -}}
   </button>
 

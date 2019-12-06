@@ -11,8 +11,8 @@ function defineAvailableModules() {
 }
 
 function initializeComponent($component, availableModules) {
-  const behaviour = $component.getAttribute('data-behaviour');
-  const handlers = behaviour.trim().split(' ');
+  const { behavior } = $component.dataset;
+  const handlers = behavior.trim().split(' ');
   handlers.forEach((handler) => {
     // eslint-disable-next-line no-prototype-builtins
     if (availableModules.hasOwnProperty(handler)) {
@@ -22,7 +22,7 @@ function initializeComponent($component, availableModules) {
   });
 
   // eslint-disable-next-line no-param-reassign
-  $component.dataset.behaviourInitialised = 'true';
+  $component.dataset.behaviorInitialised = 'true';
 }
 
 function initialize(window) {
