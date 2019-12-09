@@ -1,5 +1,21 @@
 <script>
   (function() {
+
+
+    /**
+     * Append a script element to the end of the <body> with a src of uri
+     *
+     * @param {string} uri
+     */
+    function addScript(uri) {
+      if (!uri || !uri.length) {
+        return;
+      }
+      const script = document.createElement('script');
+      script.setAttribute('src', uri);
+      document.body.appendChild(script);
+    }
+
    /**
      * Searches for an element with a data attribute prefixed with "data-storybook-htmlattr-", and ending in the
      * name of the desired attribute. If it finds the data attribute, it returns its value, or an empty string if
@@ -55,16 +71,8 @@
      window.setTimeout(function () {
       updateHtmlAttributes(['dir', 'lang'], allowedAttributes);
 
-      // const script = document.createElement('script');
-      // script.setAttribute('src', '/main.libero-bundle.js');
-      // document.body.appendChild(script);
+      // TODO: would need appropriate feature tests whether to load the js at all
+       addScript('/main.libero-bundle.js');
     }, 3000);
   }());
-</script>
-
-<script src="/main.libero-bundle.js"></script>
-
-<script>
-  // Load the pattern behaviour JavaScript.
-  // window.setTimeout()
 </script>

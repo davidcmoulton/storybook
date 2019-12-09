@@ -32,9 +32,4 @@ function initialize(window = window) {
   flagJsUsage(window);
 }
 
-function delayLoad(delayed, window) {
-  window.setTimeout(() => delayed.call(null, window), 3000);
-}
-
-// export default initialize(global.window);
-export default delayLoad(initialize, global.window);
+export default initialize(global.window);
