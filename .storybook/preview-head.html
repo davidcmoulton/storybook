@@ -51,9 +51,20 @@
       },
     ];
 
-    // Listening for an event doesn't work
+    // The iframe's window.load event fires before the DOM is finalised
      window.setTimeout(function () {
       updateHtmlAttributes(['dir', 'lang'], allowedAttributes);
+
+      // const script = document.createElement('script');
+      // script.setAttribute('src', '/main.libero-bundle.js');
+      // document.body.appendChild(script);
     }, 3000);
   }());
+</script>
+
+<script src="/main.libero-bundle.js"></script>
+
+<script>
+  // Load the pattern behaviour JavaScript.
+  // window.setTimeout()
 </script>
