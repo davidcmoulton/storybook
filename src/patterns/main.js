@@ -25,8 +25,7 @@ function initializeComponent($component, availableModules) {
   $component.dataset.behaviorInitialised = 'true';
 }
 
-function initialize(window) {
-  debugger;
+function initialize(window = window) {
   const modules = defineAvailableModules();
   const patternsWithBehavior = [...window.document.querySelectorAll('[data-behavior]')];
   patternsWithBehavior.forEach((rootElement) => initializeComponent(rootElement, modules));
@@ -34,7 +33,6 @@ function initialize(window) {
 }
 
 function delayLoad(delayed, window) {
-  debugger;
   window.setTimeout(() => delayed.call(null, window), 3000);
 }
 
